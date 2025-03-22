@@ -33,9 +33,7 @@ function getCurrentFunctionName() {
  *
  */
 function getFunctionBody(func) {
-  if (!func) {
-    return '';
-  }
+  if (!func) return '';
   return func.toString();
 }
 
@@ -54,11 +52,7 @@ function getFunctionBody(func) {
  *
  */
 function getArgumentsCount(funcs) {
-  const countArr = [];
-  funcs.forEach((func) => {
-    countArr.push(func.length);
-  });
-  return countArr;
+  return funcs.map((func) => func.length);
 }
 
 /**
@@ -78,12 +72,10 @@ function getArgumentsCount(funcs) {
  *
  */
 function getPowerFunction(exponent) {
-  const expon = exponent;
-  function mathPower(number) {
-    const result = number ** expon;
+  return function mathPower(number) {
+    const result = number ** exponent;
     return result;
-  }
-  return mathPower;
+  };
 }
 
 /**
